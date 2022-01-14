@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="query.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <div class="centered">
+    <div style="padding: 15px 10px; font-size: 5em; text-shadow: 20px 20px #2020205b;">ai art</div>
+  </div>
+  <div class="centered">
+    <input id="text" type="text" placeholder="prompt"/>
+    <select id="choices">
+      <option value="5" selected disabled hidden>choice</option>
+      <option value="1">synthwave</option>
+      <option value="2">ukiyo-e</option>
+      <option value="3">none</option>
+      <option value="4">steampunk</option>
+      <option value="5">fantasy</option>
+      <option value="6">vibrant</option>
+      <option value="7">real</option>
+      <option value="8">pastel</option>
+      <option value="9">psychic</option>
+      <option value="10">dark</option>
+      <option value="11">mystical</option>
+      <option value="12">festive</option>
+      <option value="13">baroque</option>
+      <option value="14">etching</option>
+      <option value="15">salvador</option>
+      <option value="16">water color</option>
+    </select>
+    <button type="button" onclick="onSubmit();onSubmit();onSubmit();onSubmit()">submit</button>
+    <button type="button" onclick="onReset();onReset();onReset();onReset()">reset</button>
+  </div>
+
+  <div id="results">
+    
+  </div>
+</body>
+</html>

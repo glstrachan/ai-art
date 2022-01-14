@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "cors-anywhere": "^0.4.4",
+    "express": "^4.17.2",
+    "node-fetch": "^2.6.6",
+    "request": "^2.88.2",
+    "whatwg-fetch": "^3.6.2"
+  }
+}
