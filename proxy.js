@@ -6,14 +6,20 @@ const cors = require('cors')
 const app = express()
 app.use(bodyParser.text())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded())
 app.use(cors())
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/*', async (req, res) => {
+app.use('/potato/*', (req, res) => {
+  console.log('request', req.method)
+})
+
+app.use('/api/*', async (req, res) => {
   let response;
 
   if (req.method === "GET") {
-    response = await fetch(req.originalUrl.substring(1), {
-      credentials: "include",
+    response = await fetch('https://' + req.originalUrl.substring(5), {
       headers: {
         authorization: req.headers.authorization
       },
@@ -22,10 +28,10 @@ app.use('/*', async (req, res) => {
     })
   }
   else {
-    response = await fetch(req.originalUrl.substring(1), {
-      credentials: "include",
+    response = await fetch('https://' + req.originalUrl.substring(5), {
+      "credentials": "omit",
       headers: {
-        authorization: req.headers.authorization
+        authorization: req.headers.authorization,
       },
       body: typeof req.body == 'object' ? JSON.stringify(req.body) : req.body,
       method: req.method,
@@ -40,4 +46,3 @@ app.use('/*', async (req, res) => {
 })
 
 app.listen(8080)
-
